@@ -20,13 +20,17 @@ function App() {
   const handleMoonClick = () => {
     setShowMagic(true);
     if (audioRef.current) audioRef.current.play().catch(() => {});
-    setTimeout(() => setShowPhoto(true), 0); // Delay photo reveal
+    setTimeout(() => setShowPhoto(true), 0);
   };
 
   return (
     <div className="App">
-      {/* 🎵 Audio path corrected */}
-      <audio ref={audioRef} src="/audio/voice.mp3" preload="auto" />
+      {/* 🎵 Audio */}
+      <audio
+        ref={audioRef}
+        src={`${process.env.PUBLIC_URL}/audio/voice.mp3`}
+        preload="auto"
+      />
 
       {/* 🌠 Stars */}
       {stars.map((s) => (
@@ -61,8 +65,8 @@ function App() {
           தருவது என் நிலா நீ அல்லவா 💖
         </span>
       </motion.div>
-      {/* 👉 Hand indicator beside the moon */}
-      {/* 👈 Hand indicator beside the moon (left side) */}
+
+      {/* 👈 Hand Indicator beside moon */}
       {!showMagic && (
         <motion.div
           className="hand-icon"
@@ -75,12 +79,11 @@ function App() {
       )}
 
       {/* 🌕 Moon Container */}
-      {/* 🌕 Moon Container */}
       <motion.div
         className="moon"
         onClick={handleMoonClick}
         style={{
-          backgroundImage: "url('/moon.jpg')", // ✅ your custom moon image
+          backgroundImage: `url(${process.env.PUBLIC_URL}/moon.jpg)`, // ✅ Your moon image
           backgroundSize: "cover",
           backgroundPosition: "center",
           borderRadius: "50%",
@@ -88,23 +91,22 @@ function App() {
           height: "250px",
           margin: "auto",
           boxShadow: showPhoto
-            ? "0 0 60px 20px rgba(255,182,193,0.5)" 
+            ? "0 0 60px 20px rgba(255,182,193,0.5)"
             : "0 0 40px 10px rgba(255,255,255,0.3)",
-
-          filter: "brightness(0.85)",
+          filter: "brightness(0.9)",
           transition: "all 1s ease-in-out",
         }}
         animate={{
           boxShadow: showPhoto
-            ? "0 0 120px 50px rgba(255,182,193,0.9)"
+            ? "0 0 100px 40px rgba(255,182,193,0.8)"
             : "0 0 50px 15px rgba(255,255,255,0.4)",
         }}
         transition={{ duration: 3 }}
       >
-        {/* 🩷 Her photo appears glowing from inside the moon */}
+        {/* 🩷 Her photo appears glowing inside moon */}
         {showPhoto && (
           <motion.img
-            src="/her-photo.jpg"
+            src={`${process.env.PUBLIC_URL}/her-photo.jpg`}
             alt="Her"
             className="moon-photo"
             initial={{ opacity: 0, scale: 0.5 }}
@@ -115,8 +117,8 @@ function App() {
               height: "100%",
               borderRadius: "50%",
               objectFit: "cover",
-              filter: "brightness(1.2) contrast(1.2)",
-              boxShadow: "0 0 60px rgba(255, 182, 193, 0.9)",
+              filter: "brightness(1.1) contrast(1.2)",
+              boxShadow: "0 0 50px rgba(255, 182, 193, 0.8)",
             }}
           />
         )}
@@ -125,6 +127,7 @@ function App() {
       {/* 💞 Magic Effects */}
       {showMagic && (
         <>
+          {/* Floating Hearts */}
           {Array.from({ length: 15 }).map((_, i) => (
             <motion.div
               key={i}
@@ -142,6 +145,7 @@ function App() {
             </motion.div>
           ))}
 
+          {/* Floating Butterflies */}
           {Array.from({ length: 10 }).map((_, i) => (
             <motion.div
               key={i}
@@ -163,6 +167,7 @@ function App() {
             </motion.div>
           ))}
 
+          {/* 💖 Message */}
           <motion.div
             className="message"
             initial={{ opacity: 0, scale: 0.8 }}
