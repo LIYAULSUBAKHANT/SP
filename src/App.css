@@ -236,7 +236,6 @@ body {
   text-shadow: 0 0 10px #ff66cc, 0 0 20px #ff99ff;
   pointer-events: none; /* so clicks go to moon */
 }
-//* 🌙 Responsive Fixes for Mobile View */
 @media (max-width: 768px) {
   .App {
     padding: 20px;
