@@ -252,11 +252,14 @@ body {
     left: 45%;
     top: 55%;
   }
-.tamil-quote {
+
+  .tamil-quote {
     width: 90%;
     font-size: 16px;
     line-height: 1.7;
     padding: 0 10px;
+  }  /* ✅ Added missing closing brace here */
+
   .message {
     font-size: 18px;
     bottom: 18%;
@@ -286,7 +289,8 @@ body {
     left: 50%;
     bottom: 40%;
   }
- .tamil-quote {
+
+  .tamil-quote {
     width: 95%;
     font-size: 15px;
     line-height: 1.6;
@@ -295,14 +299,13 @@ body {
   .message {
     font-size: 18px;
     bottom: 22%;
-    left:1%;
+    left: 1%;
   }
 
   .hand-icon {
     font-size: 24px;
     left: calc(50% + 80px); /* still on right side */
     transform: translateY(-50%) rotate(180deg);
-    top:48%
-   
+    top: 48%;
   }
 }
