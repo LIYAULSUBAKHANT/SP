@@ -236,3 +236,73 @@ body {
   text-shadow: 0 0 10px #ff66cc, 0 0 20px #ff99ff;
   pointer-events: none; /* so clicks go to moon */
 }
+//* 🌙 Responsive Fixes for Mobile View */
+@media (max-width: 768px) {
+  .App {
+    padding: 20px;
+    text-align: center;
+    overflow-x: hidden;
+  }
+
+  .moon {
+    width: 160px !important;
+    height: 160px !important;
+    left: 45%;
+    top: 55%;
+  }
+
+  .tamil-quote {
+    font-size: 16px;
+    line-height: 1.6;
+    padding: 0 10px;
+    text-align: center;
+  }
+
+  .message {
+    font-size: 18px;
+    bottom: 18%;
+    padding: 0 10px;
+  }
+
+  /* 👉 Keep hand on right side of moon and make it point left */
+  .hand-icon {
+    font-size: 28px;
+    position: absolute;
+    top: 55%;
+    left: calc(50% + 100px); /* stays to right of moon */
+    transform: translateY(-50%) rotate(180deg); /* flips it to point left */
+  }
+
+  .heart,
+  .butterfly {
+    font-size: 18px;
+  }
+}
+
+/* Even smaller screens */
+@media (max-width: 480px) {
+  .moon {
+    width: 140px !important;
+    height: 140px !important;
+    left: 50%;
+    bottom: 40%;
+  }
+
+  .tamil-quote {
+    font-size: 16px;
+  }
+
+  .message {
+    font-size: 18px;
+    bottom: 22%;
+    left:1%;
+  }
+
+  .hand-icon {
+    font-size: 24px;
+    left: calc(50% + 80px); /* still on right side */
+    transform: translateY(-50%) rotate(180deg);
+    top:48%
+   
+  }
+}
