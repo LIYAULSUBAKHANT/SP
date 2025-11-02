@@ -93,14 +93,17 @@ body {
 /* 💬 Glowing Tamil Quote (above moon) */
 .tamil-quote {
   position: absolute;
-  top: 15%;
-  left: 48.5%;
+  top: 12%;
+  left: 50%;
   transform: translateX(-50%);
+  width: 80%; /* ✅ Give space for proper wrapping */
   text-align: center;
+  white-space: normal; /* ✅ Allow wrapping normally */
   font-family: "Poppins", sans-serif;
-  font-size: 28px;
+  font-size: 22px;
   font-weight: 600;
-  letter-spacing: 1px;
+  line-height: 1.8; /* ✅ Good spacing between lines */
+  letter-spacing: 0.5px;
   color: #fff;
   text-shadow: 0 0 15px #fcff63, 0 0 30px #ff99cc, 0 0 60px #ff66ff;
   animation: floatQuote 3s ease-in-out infinite alternate;
@@ -249,14 +252,11 @@ body {
     left: 45%;
     top: 55%;
   }
-
-  .tamil-quote {
+.tamil-quote {
+    width: 90%;
     font-size: 16px;
-    line-height: 1.6;
+    line-height: 1.7;
     padding: 0 10px;
-    text-align: center;
-  }
-
   .message {
     font-size: 18px;
     bottom: 18%;
@@ -286,9 +286,10 @@ body {
     left: 50%;
     bottom: 40%;
   }
-
-  .tamil-quote {
-    font-size: 16px;
+ .tamil-quote {
+    width: 95%;
+    font-size: 15px;
+    line-height: 1.6;
   }
 
   .message {
